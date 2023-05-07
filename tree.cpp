@@ -1,6 +1,5 @@
 /*
  * The Tree Command
- * SKELETON IMPLEMENTATION TO BE FILLED IN FOR TASK 3
  */
 
 #include <infos.h>
