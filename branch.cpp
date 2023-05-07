@@ -44,32 +44,7 @@ public:
 	virtual void train(ADDRINT branchPC, bool branchWasTaken) {} //nothing to do here: always taken branch predictor does not have history
 };
 
-//------------------------------------------------------------------------------
-//##############################################################################
-/*
- * Insert your changes below here...
- *
- * Put your branch predictor implementation here
- *
- * For example:
- * class LocalBranchPredictor : public BranchPredictorInterface {
- *
- *   ***put private members for Local branch predictor here
- *
- *   public:
- *	   virtual bool getPrediction(ADDRINT branchPC) {
- *	  	 ***put your implementation here
- *	   }
- *	   virtual void train(ADDRINT branchPC, bool branchWasTaken) {
- *	     ***put your implementation here
- *	   }
- * }
- *
- * You also need to create an object of branch predictor class in main()
- * (i.e. at line 193 in the original unmodified version of this file).
- */
-//##############################################################################
-//------------------------------------------------------------------------------
+
 
 // Local
 class LocalBranchPredictor:
@@ -456,30 +431,7 @@ int main(int argc, char * argv[]) {
     std::cerr << "Using always taken BP" << std::endl;
     branchPredictor = new AlwaysTakenBranchPredictor(KnobNumberOfEntriesInBranchPredictor.Value());
   }
-//------------------------------------------------------------------------------
-//##############################################################################
-/*
- * Insert your changes below here...
- *
- * In the following cascading if-statements instantiate branch predictor objects
- * using the classes that you have implemented for each of the three types of
- * predictor.
- *
- * The choice of predictor, and the number of entries in its prediction table
- * can be obtained from the command line arguments of this Pin tool using:
- *
- *  KnobNumberOfEntriesInBranchPredictor.Value()
- *    returns the integer value specified by tool option "-num_BP_entries".
- *
- *  KnobBranchPredictorType.Value()
- *    returns the value specified by tool option "-BP_type".
- *    The argument of tool option "-BP_type" must be one of the strings:
- *        "always_taken",  "local",  "gshare",  "tournament"
- *
- *  Please DO NOT CHANGE these strings - they will be used for testing your code
- */
-//##############################################################################
-//------------------------------------------------------------------------------
+
   else if (KnobBranchPredictorType.Value() == "local") {
   	 std::cerr << "Using Local BP." << std::endl;
 /* Uncomment when you have implemented a Local branch predictor */
